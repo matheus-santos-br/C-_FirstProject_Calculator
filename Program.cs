@@ -34,6 +34,7 @@ namespace Calculator
                 Console.WriteLine("2 - Subtraction");
                 Console.WriteLine("3 - Division");
                 Console.WriteLine("4 - Multiplication");
+                Console.WriteLine("5 - Exit");
 
                 Console.WriteLine("-------------------------");
                 Console.WriteLine("Select an option: "); 
@@ -45,13 +46,16 @@ namespace Calculator
                     case 2: Subtraction(); break;
                     case 3: Division(); break;
                     case 4: Multiplication(); break;
+                    case 5: System.Environment.Exit(0);break; 
 
-                    default: Console.WriteLine("Not found");
+                    default: Console.WriteLine("");
                     break;
                     }
                     
-                if (!(res == 1) && !(res == 2) && !(res == 3) && !(res == 4))
+                if (!(res == 1) && !(res == 2) && !(res == 3) && !(res == 4) && !(res == 5))
                 {
+                    Console.WriteLine("Not found");
+                    Console.ReadKey();
                     goto comeback;
                 }
 
@@ -68,7 +72,10 @@ namespace Calculator
                 else if(!(res2 == "S") && !(res2 == "N")){
 
                     Console.WriteLine("Not found");
+                    Console.ReadKey();
+                    Console.Clear();
                     goto comeback2;
+                    
                 }else{
                     check = 0;
                 }
